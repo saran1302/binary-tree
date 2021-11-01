@@ -51,7 +51,27 @@ else
   y->right = n;
 }
 
-
+void delete(binary_search_tree *t, node *z) {
+if(z->left == NULL) {
+  transplant(t, z, z->right);
+  free(z);
+}
+else if(z->right == NULL) {
+  transplant(t, z, z->left);
+  free(z);
+}
+else {
+  node *y = minimum(t, z->right); //minimum element in right subtree
+  if(y->parent != z) {
+    transplant(t, y, y->right);
+    y->right = z->right;
+    y->right->parent = y;
+  }
+  transplant(t, z, y);
+  y->left = z->left;
+  y->left->parent = y;
+  free(z);
+}
 
 
 void inorder(binary_search_tree *t, node *n) {
