@@ -81,6 +81,12 @@ if(n != NULL) {
   inorder(t, n->right);
 }
 }
+  node* minimum(binary_search_tree *t, node *x) {
+while(x->left != NULL)
+  x = x->left;
+return x;
+}
+  
 
 int main() {
 binary_search_tree *t = new_binary_search_tree();
