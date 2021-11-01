@@ -50,7 +50,11 @@ else if(n->data < y->data)
 else
   y->right = n;
 }
-
+ node* minimum(binary_search_tree *t, node *x) {
+while(x->left != NULL)
+  x = x->left;
+return x;
+}
 void delete(binary_search_tree *t, node *z) {
 if(z->left == NULL) {
   transplant(t, z, z->right);
@@ -81,11 +85,7 @@ if(n != NULL) {
   inorder(t, n->right);
 }
 }
-  node* minimum(binary_search_tree *t, node *x) {
-while(x->left != NULL)
-  x = x->left;
-return x;
-}
+ 
   
 
 int main() {
