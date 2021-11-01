@@ -86,6 +86,11 @@ while(x->left != NULL)
   x = x->left;
 return x;
 }
+  node* maximum(binary_search_tree *t, node *x) {
+while(x->right != NULL)
+  x = x->right;
+return x;
+}
   
 
 int main() {
