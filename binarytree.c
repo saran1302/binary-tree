@@ -120,12 +120,8 @@ insert(t, j);
 insert(t, k);
 insert(t, l);
 insert(t, m);
-
 delete(t, a);
 delete(t, m);
-
 inorder(t, t->root);
-
 return 0;
-
 }
